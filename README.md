@@ -23,3 +23,7 @@ Install Oh-My-Zsh
 Add z:
 
 `git clone git://github.com/rupa/z ~/dotfiles-local/z`
+
+Install powerline:
+
+`sudo pacman -Sy powerline powerline-fonts powerline-vim`

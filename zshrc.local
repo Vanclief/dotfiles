@@ -11,6 +11,10 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
+# powerline - pretty statusline
+powerline-daemon -q
+. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+
 # Oh-My-Zsh - Config bellow this line
 
 # Path to your oh-my-zsh installation.
