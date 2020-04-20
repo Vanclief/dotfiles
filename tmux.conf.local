@@ -1,3 +1,11 @@
+# | |  / /   |  / | / / ____/ /   /  _/ ____/ ____/
+# # | | / / /| | /  |/ / /   / /    / // __/ / /_
+# # | |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
+# # |___/_/  |_/_/ |_/\____/_____/___/_____/_/
+# #
+# # repo  : https://github.com/vanclief/dotfiles/
+# # file  : tmux.conf
+
 # Set default shell to Zsh
 set-option -g default-shell /bin/zsh
 

@@ -1,3 +1,11 @@
+# | |  / /   |  / | / / ____/ /   /  _/ ____/ ____/
+# # | | / / /| | /  |/ / /   / /    / // __/ / /_
+# # | |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
+# # |___/_/  |_/_/ |_/\____/_____/___/_____/_/
+# #
+# # repo  : https://github.com/vanclief/dotfiles/
+# # file  : gitconfig
+
 [alias]
   cl = clean -f -d 
   amend = commit --amend
