@@ -1,2 +1,9 @@
 # Set default shell to Zsh
 set-option -g default-shell /bin/zsh
+
+# Use PREFIX+"\" to split horizontally and PREFIX+"-" to split vertically
+bind \\ split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
+# reload ~/.tmux.conf using PREFIX r
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
