@@ -1,0 +1,31 @@
+#  fzf - A command-line fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# z - jump around
+export _Z_DATA="$HOME/z-data"
+source ~/dotfiles-local/z/z.sh
+
+# tmux - start terminal multiplexer
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
+  [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
+# Oh-My-Zsh - Config bellow this line
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+ZSH_THEME="agnoster"
+
+# Which plugins would you like to load? (plugins can be found in  ~/.oh-my-zsh/plugins/*)
+plugins=(
+  command-not-found 
+  ssh-agent 
+  git
+)
+
+# User configuration
+source $ZSH/oh-my-zsh.sh
+
