@@ -1,6 +1,8 @@
 # dotfiles-arch
 
-I used to have a pretty heavy dotfile configuration but after falling in love with simplicity, I keep a very lightweight configuration. 
+I used to have a pretty heavy dotfile configuration but after falling in love with simplicity, I now keep a very lightweight configuration.
+
+Most stuff is stolen from [this gentleman.](https://github.com/rhomeister/dotfiles-shared)
 
 ## Requirements
 
