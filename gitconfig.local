@@ -1,3 +1,15 @@
+[alias]
+  cl = clean -f -d 
+  amend = commit --amend
+  mup = !git checkout master && git pull && git checkout -
+  sla = log --oneline --decorate --graph --all
+  glog = log -E -i --grep
+  uncommit = reset --soft HEAD^
+  pp = !git publish && git-pr && :
+  publish = push -u
+  bd = !git-bd
+  pullf = !git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
+  flict = diff --name-only --diff-filter=U
 [user]
   email = franco.avalencia@gmail.com
   name = Franco Valencia
