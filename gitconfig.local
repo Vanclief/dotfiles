@@ -21,3 +21,5 @@
 [user]
   email = franco.avalencia@gmail.com
   name = Franco Valencia
+[include]
+  path = ~/.gitconfig.secrets
