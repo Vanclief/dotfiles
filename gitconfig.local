@@ -18,6 +18,7 @@
   bd = !git-bd
   pullf = !git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
   flict = diff --name-only --diff-filter=U
+  pt = push --tags
 [user]
   email = franco.avalencia@gmail.com
   name = Franco Valencia
