@@ -6,8 +6,6 @@
 # # repo  : https://github.com/vanclief/dotfiles/
 # # file  : zshrc
 
-#  fzf - A command-line fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # z - jump around
 export _Z_DATA="$HOME/z-data"
@@ -41,3 +39,5 @@ plugins=(
 # User configuration
 source $ZSH/oh-my-zsh.sh
 
+#  fzf - A command-line fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
