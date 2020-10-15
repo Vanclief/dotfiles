@@ -21,6 +21,8 @@ alias podkill='kubectl delete po -n $CLUSTER $POD'
 alias podfor='kubectl port-forward -n $CLUSTER $POD $PORT'
 
 # Econic
+alias contextprod='kubectl config use-context econic-production'
+alias contextstaging='kubectl config use-context econic-staging'
 alias poddb='kubectl port-forward -n $CLUSTER $POD 5433:5432'
 alias podauth='kubectl port-forward -n $CLUSTER $POD 9001:9001'
 alias podnoti='kubectl port-forward -n $CLUSTER $POD 9002:9002'
