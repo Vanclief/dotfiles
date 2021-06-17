@@ -45,3 +45,7 @@ source $ZSH/oh-my-zsh.sh
 # Allow RubyGems binaries to be executed
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
+
+# Allow Pip3 binaries to be executed
+export PIP_HOME="$(python -m site --user-base)"
+export PATH="$PATH:$PIP_HOME/bin"

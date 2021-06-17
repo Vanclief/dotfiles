@@ -11,7 +11,6 @@ alias n="nvim"
 alias py="python"
 alias py3="python3"
 alias xcopy="xclip -sel clip"
-alias dockclear='docker rm $(docker ps -aq)'
 alias k8='kubectl'
 
 # Kubernetes
@@ -19,6 +18,10 @@ alias podlist='kubectl get pods -n $CLUSTER'
 alias podlogs='kubectl logs -fn $CLUSTER $POD'
 alias podkill='kubectl delete po -n $CLUSTER $POD'
 alias podfor='kubectl port-forward -n $CLUSTER $POD $PORT'
+
+# Docker
+alias dockerlist='docker ps'
+alias dockerclear='docker rm $(docker ps -aq)'
 
 # Econic
 alias contextprod='kubectl config use-context econic-production'
