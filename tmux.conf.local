@@ -18,3 +18,6 @@ bind - split-window -v -c "#{pane_current_path}"
 
 # reload ~/.tmux.conf using PREFIX r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# write on multiple panes at once
+bind y setw synchronize-panes

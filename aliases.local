@@ -24,7 +24,7 @@ alias dockerlist='docker ps'
 alias dockerclear='docker rm $(docker ps -aq)'
 
 # Env
-alias loadenv='export $(grep -v '^#' .env | xargs)'
+alias loadenv='export $(grep -v "^#" .env | xargs)'
 
 # Econic
 alias contextprod='kubectl config use-context econic-production'

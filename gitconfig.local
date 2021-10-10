@@ -26,5 +26,11 @@
 [user]
   email = franco.avalencia@gmail.com
   name = Franco Valencia
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+  insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/
 [include]
   path = ~/.gitconfig.secrets
