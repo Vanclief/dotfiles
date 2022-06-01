@@ -19,7 +19,7 @@ fi
 
 # powerline - pretty statusline
 powerline-daemon -q
-. /usr/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.10/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Oh-My-Zsh - Config bellow this line
 
@@ -50,3 +50,6 @@ export PATH="$PATH:$GEM_HOME/bin"
 # Allow Pip3 binaries to be executed
 export PIP_HOME="$(python -m site --user-base)"
 export PATH="$PATH:$PIP_HOME/bin"
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
