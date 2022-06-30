@@ -14,3 +14,6 @@ Plug 'preservim/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'tomlion/vim-solidity'
 Plug 'raimondi/delimitMate'
+Plug 'joshdick/onedark.vim', { 'branch': 'main' }
+" Plug 'sheerun/vim-polyglot'
+

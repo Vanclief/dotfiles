@@ -6,8 +6,22 @@
 "" repo  : https://github.com/vanclief/dotfiles-arch/
 " file  : vimrc
 
+" Set one dark theme
+syntax on
+colorscheme onedark
+
 " Define what version of powerline to use
 let g:powerline_pycmd="py3"
 
 " Escape using jj
 imap jj <ESC>
+
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
