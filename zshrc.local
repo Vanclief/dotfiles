@@ -53,3 +53,6 @@ export PATH="$PATH:$PIP_HOME/bin"
 
 # NVM
 source /usr/share/nvm/init-nvm.sh
+
+# Foundry
+export PATH="$PATH:/home/vanclief/.foundry/bin"
