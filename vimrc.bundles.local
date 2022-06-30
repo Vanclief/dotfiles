@@ -12,8 +12,7 @@ UnPlug 'vim-ruby'
 " Define bundles we actually want
 Plug 'preservim/nerdtree'
 Plug 'godlygeek/tabular'
-Plug 'tomlion/vim-solidity'
+Plug 'tovarishFin/vim-solidity'
 Plug 'raimondi/delimitMate'
 Plug 'joshdick/onedark.vim', { 'branch': 'main' }
-" Plug 'sheerun/vim-polyglot'
-
+Plug 'junegunn/goyo.vim'
