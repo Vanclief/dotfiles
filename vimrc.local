@@ -16,6 +16,9 @@ let g:powerline_pycmd="py3"
 " Escape using jj
 imap jj <ESC>
 
+" Go mappings
+au FileType go nmap <leader>t <Plug>(go-test-func)
+
 " Go syntax highlighting
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
