@@ -10,8 +10,8 @@
 syntax on
 colorscheme onedark
 
-" Define what version of powerline to use
-let g:powerline_pycmd="py3"
+" Disable powerline which is not compatible with nvim
+let g:powerline_loaded = 1
 
 " Escape using jj
 imap jj <ESC>

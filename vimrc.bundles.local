@@ -16,3 +16,5 @@ Plug 'tovarishFin/vim-solidity'
 Plug 'raimondi/delimitMate'
 Plug 'joshdick/onedark.vim', { 'branch': 'main' }
 Plug 'junegunn/goyo.vim'
+Plug 'vim-airline/vim-airline'
+
