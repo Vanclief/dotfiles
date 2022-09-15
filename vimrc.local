@@ -1,7 +1,7 @@
 "| |  / /   |  / | / / ____/ /   /  _/ ____/ ____/
-""| | / / /| | /  |/ / /   / /    / // __/ / /_
+"| | / / /| | /  |/ / /   / /    / // __/ / /_
 "| |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
-""|___/_/  |_/_/ |_/\____/_____/___/_____/_/
+"|___/_/  |_/_/ |_/\____/_____/___/_____/_/
 "
 "" repo  : https://github.com/vanclief/dotfiles-arch/
 " file  : vimrc
@@ -12,6 +12,12 @@ colorscheme onedark
 
 " Disable powerline which is not compatible with nvim
 let g:powerline_loaded = 1
+
+"Toggle nerdtree with ctrl + n
+let g:NERDTreeWinPos="left"
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Escape using jj
 imap jj <ESC>
@@ -30,6 +36,6 @@ let g:go_highlight_types = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
 
-" Auto formatting and importing
+" Go auto formatting and importing
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
