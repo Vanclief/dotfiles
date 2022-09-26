@@ -17,3 +17,4 @@ alias dockerclear='docker rm $(docker ps -aq)'
 
 # Env
 alias loadenv='export $(grep -v "^#" .env | xargs)'
+

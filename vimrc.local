@@ -29,6 +29,9 @@ imap jj <ESC>
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 
+" Go testing
+let test#go#runner = 'ginkgo'
+
 " Go mappings
 au FileType go nmap <leader>t <Plug>(go-test-func)
 
