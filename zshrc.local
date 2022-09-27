@@ -54,3 +54,11 @@ source /usr/share/nvm/init-nvm.sh
 
 # foundry - Utility for solidity development
 export PATH="$PATH:/home/vanclief/.foundry/bin"
+
+
+# Change the color of the prompt segment to be compatible with light theme
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black white "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
