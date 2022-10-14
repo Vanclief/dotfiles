@@ -17,10 +17,6 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
-# powerline - Pretty statusline
-powerline-daemon -q
-. /usr/lib/python3.10/site-packages/powerline/bindings/zsh/powerline.zsh
-
 # Oh-My-Zsh - Config bellow this line
 
 # Path to your oh-my-zsh installation.
@@ -46,15 +42,14 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # python - Allow Pip3 binaries to be executed
-export PIP_HOME="$(python -m site --user-base)"
-export PATH="$PATH:$PIP_HOME/bin"
+export PATH="$PATH:$(python3 -m site --user-base)/bin"
 
 # NVM - Switch node versions
-source /usr/share/nvm/init-nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # foundry - Utility for solidity development
 export PATH="$PATH:/home/vanclief/.foundry/bin"
-
 
 # Change the color of the prompt segment to be compatible with light theme
 prompt_context() {
@@ -62,3 +57,13 @@ prompt_context() {
     prompt_segment black white "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+# PyEnv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# powerline - Pretty statusline
+powerline-daemon -q
+source ~/.pyenv/versions/3.7.12/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+# . /usr/lib/python3.10/site-packages/powerline/bindings/zsh/powerline.zsh
