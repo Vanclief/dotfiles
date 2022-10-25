@@ -62,3 +62,6 @@ prompt_context() {
     prompt_segment black white "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+# Protostar - Cairo development
+export PATH="$PATH:/home/vanclief/.protostar/dist/protostar"
