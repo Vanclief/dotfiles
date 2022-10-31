@@ -46,11 +46,13 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # python - Allow Pip3 binaries to be executed
-export PIP_HOME="$(python -m site --user-base)"
+export PIP_HOME="$(python3 -m site --user-base)"
 export PATH="$PATH:$PIP_HOME/bin"
 
 # NVM - Switch node versions
-source /usr/share/nvm/init-nvm.sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" ||
+  printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # foundry - Utility for solidity development
 export PATH="$PATH:/home/vanclief/.foundry/bin"
