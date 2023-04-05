@@ -7,24 +7,30 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- File navigation
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- Theme
   use ('navarasu/onedark.nvim')
 
+  -- AST in steroids
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-
   use('nvim-treesitter/playground')
 
+  -- Quickly switching between files
   use('ThePrimeagen/harpoon')
 
+  -- CTRL-Z in steroids
   use('mbbill/undotree')
 
+  -- Git Plugin
   use('tpope/vim-fugitive')
 
+  -- LSP Support
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v2.x',
@@ -45,5 +51,8 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
 	}
   }
+
+  -- Status Bar
+  use('feline-nvim/feline.nvim')
 
 end)

@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["feline.nvim"] = {
+    loaded = true,
+    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/feline.nvim",
+    url = "https://github.com/feline-nvim/feline.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/harpoon",
