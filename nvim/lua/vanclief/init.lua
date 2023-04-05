@@ -1,2 +1,2 @@
 require("vanclief.remap")
-require("vanclief.set")
+require("vanclief.config")
