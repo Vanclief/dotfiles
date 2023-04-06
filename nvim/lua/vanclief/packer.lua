@@ -67,4 +67,7 @@ return require('packer').startup(function(use)
   -- Status Bar
   use('feline-nvim/feline.nvim')
 
+  -- Commenting
+  use('numToStr/Comment.nvim')
+
 end)
