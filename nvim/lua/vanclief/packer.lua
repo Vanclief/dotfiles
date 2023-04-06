@@ -52,6 +52,18 @@ return require('packer').startup(function(use)
 	}
   }
 
+  -- Copilot & ChatGPT
+  use('github/copilot.vim')
+
+  use({
+      "jackMort/ChatGPT.nvim",
+      requires = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+      }
+  })
+
   -- Status Bar
   use('feline-nvim/feline.nvim')
 
