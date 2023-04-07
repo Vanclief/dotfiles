@@ -1,6 +1,6 @@
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pp", vim.cmd.Ex)
+vim.keymap.set("n", "<C-e>", vim.cmd.Ex)
 
 ---------------
 -- Vanclief --
@@ -16,7 +16,7 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Space space to go to last file
-vim.keymap.set("n", "<leader><leader>", "<cmd>bprev<CR>")
+vim.keymap.set("n", "<leader><leader>", "<cmd>b#<CR>")
 
 ---------------
 -- Primeagen --
