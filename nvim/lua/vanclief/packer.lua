@@ -73,4 +73,12 @@ return require('packer').startup(function(use)
   -- Tests
   use('vim-test/vim-test')
 
+  -- NvimTree
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional
+      }
+  }
+
 end)
