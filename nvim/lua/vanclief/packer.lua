@@ -70,4 +70,7 @@ return require('packer').startup(function(use)
   -- Commenting
   use('numToStr/Comment.nvim')
 
+  -- Tests
+  use('vim-test/vim-test')
+
 end)
