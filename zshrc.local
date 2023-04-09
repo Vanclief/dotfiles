@@ -67,4 +67,4 @@ prompt_context() {
 }
 
 # Load ENV variables from a .env file
-export $(grep -v '^#' .env | xargs)
+export $(grep -v '^#' /home/vanclief/dotfiles-local/.env | xargs)
