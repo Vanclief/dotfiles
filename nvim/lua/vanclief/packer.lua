@@ -81,4 +81,7 @@ return require('packer').startup(function(use)
       }
   }
 
+  -- LSP Magic
+  use('jose-elias-alvarez/null-ls.nvim')
+
 end)
