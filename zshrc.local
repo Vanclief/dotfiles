@@ -65,3 +65,6 @@ prompt_context() {
     prompt_segment black white "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+# Load ENV variables from a .env file
+export $(grep -v '^#' .env | xargs)
