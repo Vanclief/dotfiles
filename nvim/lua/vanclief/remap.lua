@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-e>", vim.cmd.Ex)
 
@@ -6,7 +5,7 @@ vim.keymap.set("n", "<C-e>", vim.cmd.Ex)
 -- Vanclief --
 ---------------
 
--- Escape with jj 
+-- Escape with jj
 vim.keymap.set("i", "jj", "<Esc>")
 
 -- Easier navigation tmux style
@@ -41,11 +40,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Awesome remaps for copy pasting into system
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Awesome remap for deleting without keeping lines
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Never use Q
 vim.keymap.set("n", "Q", "<nop>")
@@ -61,7 +60,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Space S allows me to replace the word I was using
-vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- Change chmod to executable for the file   
+-- Change chmod to executable for the file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

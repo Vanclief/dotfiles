@@ -1,6 +1,7 @@
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+
 null_ls.setup({
     sources = {
         -- ???
@@ -10,9 +11,9 @@ null_ls.setup({
         -- JS
         null_ls.builtins.diagnostics.eslint,
         -- Golang
-        null_ls.builtins.formatting.goimports
+        null_ls.builtins.formatting.goimports,
     },
-     -- you can reuse a shared lspconfig on_attach callback here
+    -- you can reuse a shared lspconfig on_attach callback here
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
             vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
