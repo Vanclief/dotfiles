@@ -1,3 +1,3 @@
-require("nvim-tree").setup {}
+-- require("nvim-tree").setup {}
 
-vim.keymap.set("n", "<C-w>", vim.cmd.NvimTreeToggle)
+-- vim.keymap.set("n", "<C-w>", vim.cmd.NvimTreeToggle)
