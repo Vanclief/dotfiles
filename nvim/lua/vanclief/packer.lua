@@ -85,6 +85,9 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Scrollbar VSCode style
+    use("petertriho/nvim-scrollbar")
+
     -- LSP Magic
     use('jose-elias-alvarez/null-ls.nvim')
 
