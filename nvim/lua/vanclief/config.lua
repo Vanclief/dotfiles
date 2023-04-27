@@ -1,3 +1,6 @@
+# Disable powerline
+vim.g.powerline_loaded = 1
+
 vim.opt.guicursor = ""
 vim.opt.hlsearch = false
 
