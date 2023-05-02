@@ -44,6 +44,9 @@ source $ZSH/oh-my-zsh.sh
 # Golang
 export PATH=$PATH:$(go env GOPATH)/bin
 
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 # python - Allow Pip3 binaries to be executed
 export PIP_HOME="$(python3 -m site --user-base)"
 export PATH="$PATH:$PIP_HOME/bin"
