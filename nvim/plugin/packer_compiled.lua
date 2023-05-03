@@ -94,10 +94,10 @@ _G.packer_plugins = {
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["copilot.vim"] = {
+  ["copilot.lua"] = {
     loaded = true,
-    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
+    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
   },
   ["feline.nvim"] = {
     loaded = true,
@@ -148,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
   },
   ["nvim-spectre"] = {
     loaded = true,

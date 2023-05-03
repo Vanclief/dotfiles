@@ -53,9 +53,10 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Copilot & ChatGPT
-    use('github/copilot.vim')
+    -- Copilot
+    use('zbirenbaum/copilot.lua')
 
+    -- ChatGPT
     use({
         "jackMort/ChatGPT.nvim",
         requires = {
