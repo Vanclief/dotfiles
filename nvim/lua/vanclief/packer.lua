@@ -83,8 +83,6 @@ return require('packer').startup(function(use)
         }
     }
 
-
-
     -- NeoTree
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -104,4 +102,13 @@ return require('packer').startup(function(use)
 
     -- Find & replace project wide
     use('nvim-pack/nvim-spectre')
+
+    -- Show what key does what
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end
+    }
 end)

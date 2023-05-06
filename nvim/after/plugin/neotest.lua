@@ -1,3 +1,4 @@
+-- Test framework
 local neotest = require("neotest")
 
 neotest.setup({

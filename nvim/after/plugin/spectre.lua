@@ -1,3 +1,4 @@
+-- spectre is a search & replace tool
 local spectre = require('spectre')
 
 vim.keymap.set("n", "<leader>so", spectre.open)
