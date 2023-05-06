@@ -73,7 +73,17 @@ return require('packer').startup(function(use)
     use('numToStr/Comment.nvim')
 
     -- Tests
-    use('vim-test/vim-test')
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-neotest/neotest-go",
+        }
+    }
+
+
 
     -- NeoTree
     use {

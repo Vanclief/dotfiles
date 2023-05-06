@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -128,6 +133,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  neotest = {
+    loaded = true,
+    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/neotest",
+    url = "https://github.com/nvim-neotest/neotest"
+  },
+  ["neotest-go"] = {
+    loaded = true,
+    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/neotest-go",
+    url = "https://github.com/nvim-neotest/neotest-go"
   },
   ["nui.nvim"] = {
     loaded = true,
@@ -203,11 +218,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-test"] = {
-    loaded = true,
-    path = "/home/vanclief/.local/share/nvim/site/pack/packer/start/vim-test",
-    url = "https://github.com/vim-test/vim-test"
   }
 }
 
