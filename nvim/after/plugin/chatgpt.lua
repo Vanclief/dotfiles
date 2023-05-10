@@ -24,7 +24,7 @@ chatgpt.setup({
     },
 })
 
-vim.keymap.set("n", "<C-g>", vim.cmd.ChatGPT)
+vim.keymap.set("n", "<C-x>", vim.cmd.ChatGPT)
 
 -- Interesting keybindings
 -- local wk = require("which-key")
