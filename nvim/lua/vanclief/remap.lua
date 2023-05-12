@@ -16,6 +16,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Space space to go to last file
 vim.keymap.set("n", "<leader><leader>", "<cmd>b#<CR>")
+vim.keymap.set("n", "gt", vim.lsp.buf.hover)
 
 ---------------
 -- Primeagen --

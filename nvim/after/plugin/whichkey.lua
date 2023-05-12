@@ -1,2 +1,2 @@
-local wk = require("which-key")
-wk.setup {}
+-- local wk = require("which-key")
+-- wk.setup {}

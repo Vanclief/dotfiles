@@ -104,13 +104,13 @@ return require('packer').startup(function(use)
     use('nvim-pack/nvim-spectre')
 
     -- Show what key does what
-    use {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end
-    }
+    -- use {
+    --     "folke/which-key.nvim",
+    --     config = function()
+    --         vim.o.timeout = true
+    --         vim.o.timeoutlen = 300
+    --     end
+    -- }
 
     -- Show function signatures
     use {
