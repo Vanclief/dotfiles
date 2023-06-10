@@ -230,4 +230,19 @@ feline.setup({
     components = components,
     theme = one_monokai,
     vi_mode_colors = vi_mode_colors,
+    disable = {
+        filetypes = {
+            "^neo%-tree$",
+            '^packer$',
+            '^startify$',
+            '^fugitive$',
+            '^fugitiveblame$',
+            '^qf$',
+            '^help$'
+        },
+        buftypes = {
+            '^terminal$'
+        },
+        bufnames = {}
+    }
 })
