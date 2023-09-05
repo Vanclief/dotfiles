@@ -21,3 +21,6 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # write on multiple panes at once
 bind y setw synchronize-panes
+
+# Set escape-time to 10ms
+set-option -sg escape-time 10
