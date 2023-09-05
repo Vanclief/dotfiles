@@ -1,0 +1,1 @@
+/home/vanclief/dotfiles-local/nvim/init.lua
