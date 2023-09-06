@@ -15,7 +15,8 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Space space to go to last file
-vim.keymap.set("n", "<leader><leader>", "<cmd>b#<CR>")
+-- This does not work in LazyVim because of Which Key
+-- vim.keymap.set("n", "<leader><leader>", "<cmd>b#<cr>")
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Remove Tmux bug Esc + J/K moves line

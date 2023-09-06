@@ -1,1 +1,0 @@
-/home/vanclief/dotfiles-local/nvim/after/plugin/whichkey.lua
