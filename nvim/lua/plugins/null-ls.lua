@@ -8,6 +8,7 @@ return {
         nls.builtins.code_actions.impl,
         nls.builtins.formatting.gofumpt,
         nls.builtins.formatting.goimports_reviser,
+        require("typescript.extensions.null-ls.code-actions"),
       })
     end
   end,

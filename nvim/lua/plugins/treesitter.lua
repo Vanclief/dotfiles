@@ -6,6 +6,18 @@ return {
       "gomod",
       "gowork",
       "gosum",
+      "typescript",
+      "ron",
+      "rust",
+      "toml",
+      "tsx",
+      "ninja",
+      "python",
+      "rst",
+      "json",
+      "json5",
+      "jsonc",
+      "yaml",
     })
   end,
 }
