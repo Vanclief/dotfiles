@@ -7,6 +7,7 @@ return {
         nls.builtins.code_actions.gomodifytags,
         nls.builtins.code_actions.impl,
         nls.builtins.formatting.gofumpt,
+        nls.builtins.formatting.goimports,
         nls.builtins.formatting.goimports_reviser,
         require("typescript.extensions.null-ls.code-actions"),
       })
