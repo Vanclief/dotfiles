@@ -11,7 +11,7 @@ return {
     {
       "<leader>fg",
       function()
-        require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
+        require("telescope.builtin").live_grep()
       end,
       desc = "Find Files (Grep)",
     },
