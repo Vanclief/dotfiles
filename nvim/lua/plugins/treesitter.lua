@@ -18,6 +18,8 @@ return {
       "json5",
       "jsonc",
       "yaml",
+      "c",
+      "cpp",
     })
   end,
 }
