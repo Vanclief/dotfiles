@@ -1,5 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
+  init = function()
+    local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    keys[#keys + 1] = { "<leader>cR", "<cmd>LspRestart<CR>", desc = "Restart LSP" }
+  end,
   opts = {
     servers = {
       gopls = {
