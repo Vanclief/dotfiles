@@ -13,38 +13,42 @@ style = "Bold"
 family = "Hack Nerd Font"
 style = "Italic"
 
-# Theme (Snazzy)
+# Theme (One Dark)
 
 [colors]
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "#282a36"
-foreground = "#eff0eb"
-
-[colors.cursor]
-cursor = "#97979b"
-
-[colors.selection]
-text = "#282a36"
-background = "#feffff"
+background = "#1e2127"
+foreground = "#abb2bf"
+bright_foreground = "#e6efff"
 
 [colors.normal]
-black = "#282a36"
-red = "#ff5c57"
-green = "#5af78e"
-yellow = "#f3f99d"
-blue = "#57c7ff"
-magenta = "#ff6ac1"
-cyan = "#9aedfe"
-white = "#f1f1f0"
+black = "#1e2127"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#d19a66"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+white = "#828791"
 
 [colors.bright]
-black = "#686868"
-red = "#ff5c57"
-green = "#5af78e"
-yellow = "#f3f99d"
-blue = "#57c7ff"
-magenta = "#ff6ac1"
-cyan = "#9aedfe"
-white = "#eff0eb"
+black = "#5c6370"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#d19a66"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+white = "#e6efff"
+
+[colors.dim]
+black = "#1e2127"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#d19a66"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+white = "#828791"
