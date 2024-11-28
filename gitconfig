@@ -45,6 +45,8 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[push]
+  autoSetupRemote = true
 [pull]
   ff = only
 [user]
