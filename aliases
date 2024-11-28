@@ -3,9 +3,10 @@
 # | |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
 # |___/_/  |_/_/ |_/\____/_____/___/_____/_/
 #
-# repo  : https://github.com/vanclief/dotfiles-arch/
+# repo  : https://github.com/vanclief/dotfiles/
 # file  : aliases
 
+alias g='git'
 alias v='vim'
 alias n="nvim"
 alias vim="nvim"

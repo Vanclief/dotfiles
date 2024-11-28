@@ -11,10 +11,7 @@ let is_nvim = has('nvim')
 
 " Set one dark theme
 syntax on
-colorscheme github-light
-
-" Disable powerline which is not compatible with nvim
-let g:powerline_loaded = 1
+" colorscheme github-light
 
 "Toggle nerdtree with ctrl + n
 let g:NERDTreeWinPos="left"

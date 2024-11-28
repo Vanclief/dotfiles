@@ -6,37 +6,18 @@
 # # repo  : https://github.com/vanclief/dotfiles/
 # # file  : zshrc
 
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # z - Jump around
 export _Z_DATA="$HOME/z-data"
-source ~/dotfiles-local/z/z.sh
+source ~/dotfiles/z/z.sh
 
 # tmux - Start terminal multiplexer
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
-
-# Oh-My-Zsh - Config bellow this line
-
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-ZSH_THEME="agnoster"
-
-# Which plugins would you like to load? (plugins can be found in  ~/.oh-my-zsh/plugins/*)
-plugins=(
-  command-not-found 
-  ssh-agent 
-  git
-  tmate
-)
-
-# User configuration
-source $ZSH/oh-my-zsh.sh
-
-# Oh-My-Zsh - End config
 
 #  fzf - A command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -67,4 +48,9 @@ prompt_context() {
 }
 
 # Load ENV variables from a .env file
-export $(grep -v '^#' /home/vanclief/dotfiles-local/.env | xargs)
+DOTFILES_PATH="$HOME/dotfiles"
+[[ -f "$DOTFILES_PATH/.env" ]] && export $(grep -v '^#' "$DOTFILES_PATH/.env" | xargs -0)
+
+# Add pure
+autoload -U promptinit; promptinit
+prompt pure

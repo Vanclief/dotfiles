@@ -6,21 +6,45 @@
 # # repo  : https://github.com/vanclief/dotfiles/
 # # file  : gitconfig
 
+[init]
+  defaultBranch = main
+  templatedir = ~/.git_template
+[push]
+  default = current
+[color]
+  ui = auto
 [alias]
+  aa = add --all
+  ap = add --patch
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  ci = commit -v
+  co = checkout
+  pf = push --force-with-lease
   cl = clean -f -d 
   amend = commit --amend
   mup = !git checkout master && git pull && git checkout -
   sla = log --oneline --decorate --graph --all
   glog = log -E -i --grep
   uncommit = reset --soft HEAD^
-  pp = !git publish && git-pr && :
   publish = push -u
-  bd = !git-bd
   pullf = !git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
   flict = diff --name-only --diff-filter=U
   pt = push --tags
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
 [merge]
   ff = only
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
+[diff]
+  colorMoved = zebra
 [pull]
   ff = only
 [user]
