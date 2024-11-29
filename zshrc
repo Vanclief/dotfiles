@@ -51,6 +51,12 @@ prompt_context() {
 DOTFILES_PATH="$HOME/dotfiles"
 [[ -f "$DOTFILES_PATH/.env" ]] && export $(grep -v '^#' "$DOTFILES_PATH/.env" | xargs -0)
 
-# Add pure
+# Add pure prompt
 autoload -U promptinit; promptinit
 prompt pure
+
+# Add auto-suggestions
+source ${ZSH_CUSTOM:-~/.zsh}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source <(fzf --zsh)
+
