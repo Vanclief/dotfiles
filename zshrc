@@ -55,6 +55,9 @@ DOTFILES_PATH="$HOME/dotfiles"
 autoload -U promptinit; promptinit
 prompt pure
 
+zstyle :prompt:pure:git:branch color green
+zstyle :prompt:pure:git:dirty color red
+
 # Add auto-suggestions
 source ${ZSH_CUSTOM:-~/.zsh}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
