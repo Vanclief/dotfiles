@@ -22,5 +22,4 @@ alias dockerlist='docker ps'
 alias dockerclear='docker rm $(docker ps -aq)'
 
 # Env
-alias loadenv='export $(grep -v "^#" .env | xargs)'
-
+alias envx='eval $(cat .env | sed "s/^/export /")'
