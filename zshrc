@@ -61,5 +61,9 @@ zstyle :prompt:pure:git:dirty color red
 # Add auto-suggestions
 source ${ZSH_CUSTOM:-~/.zsh}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Git completion setup
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
+
 source <(fzf --zsh)
 

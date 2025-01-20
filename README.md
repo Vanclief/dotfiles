@@ -12,20 +12,16 @@ Install [thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles)
 
 Clone into your machine:
 
-`git clone git://github.com/vanclief/dotfiles-arch.git ~/dotfiles-local` 
+`git clone git://github.com/vanclief/dotfiles-arch.git ~/dotfiles-local`
 
 Run rcup:
 
 `rcup`
 
-Install Oh-My-Zsh
-
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-
 Add z:
 
 `git clone git://github.com/rupa/z ~/dotfiles-local/z`
 
-Install powerline:
+Add zsh git completition
 
-`sudo pacman -Sy powerline powerline-fonts powerline-vim`
+`curl -o ~/.zsh/git-completion.zsh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh`
