@@ -61,7 +61,13 @@ return {
               vendor = true,
             },
             hints = {
-              constantValues = true, -- Only keeping useful hints
+              assignVariableTypes = false,
+              compositeLiteralFields = false,
+              compositeLiteralTypes = false,
+              constantValues = true,
+              functionTypeParameters = false,
+              parameterNames = false,
+              rangeVariableTypes = false,
             },
             analyses = {
               fieldalignment = true,
