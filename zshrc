@@ -32,10 +32,22 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PIP_HOME="$(python3 -m site --user-base)"
 export PATH="$PATH:$PIP_HOME/bin"
 
+
 # NVM - Switch node versions
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" ||
   printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Ruby
+# Point to Homebrew’s ruby first
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Now compute the gem‑API version & set up GEM_HOME
+export GEM_HOME="$HOME/.gem"
+RUBY_API_VERSION=$(
+  ruby -e 'require "rubygems"; print Gem.ruby_api_version'
+)
+export PATH="$GEM_HOME/ruby/${RUBY_API_VERSION}/bin:$PATH"
 
 # foundry - Utility for solidity development
 export PATH="$PATH:/home/vanclief/.foundry/bin"
