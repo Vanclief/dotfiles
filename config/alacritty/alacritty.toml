@@ -1,3 +1,6 @@
+[keyboard]
+bindings = [{ key = "N", mods = "Command", action = "CreateNewWindow" }]
+
 [font]
 size = 16.0
 
