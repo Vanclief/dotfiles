@@ -87,15 +87,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Agent Composer path
 export PATH="$PATH:/Users/vanclief/.agent_composer/bin"
 
-# --- agent-composer apply_patch functions ---
-apply_patch() {
-  if [ "$#" -eq 1 ]; then
-    codex --codex-run-as-apply-patch "$1"
-  else
-    p="$(cat)"
-    codex --codex-run-as-apply-patch "$p"
-  fi
-}
-apply-patch() { apply_patch "$@"; }
-applypatch()  { apply_patch "$@"; }
-# --- end agent-composer apply_patch functions ---
