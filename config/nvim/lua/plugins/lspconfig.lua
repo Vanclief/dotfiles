@@ -88,10 +88,6 @@ return {
   dependencies = {
     "mason.nvim",
   },
-  init = function()
-    local keys = require("lazyvim.plugins.lsp.keymaps").get()
-    keys[#keys + 1] = { "<leader>cR", "<cmd>LspRestart<CR>", desc = "Restart LSP" }
-  end,
   opts = {
     diagnostics = {
       underline = true,
@@ -105,6 +101,11 @@ return {
     },
     autostart = true,
     servers = {
+      ["*"] = {
+        keys = {
+          { "<leader>cR", "<cmd>LspRestart<CR>", desc = "Restart LSP" },
+        },
+      },
       -- TypeScript configuration
       vtsls = {
         root_dir = function(fname)
