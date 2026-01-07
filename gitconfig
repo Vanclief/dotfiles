@@ -31,6 +31,8 @@
   pullf = !git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
   flict = diff --name-only --diff-filter=U
   pt = push --tags
+  wta = "!f(){ b=\"$1\"; [ -z \"$b\" ] && { echo \"usage: git wta <branch>\" >&2; exit 2; }; r=$(basename \"$(git rev-parse --show-toplevel)\"); d=$(printf \"%s\" \"$b\" | sed 's,/,_,g'); mkdir -p \"../worktrees/$r\"; git worktree add \"../worktrees/$r/$d\" \"$b\"; }; f"
+  wtr = "!f(){ b=\"$1\"; [ -z \"$b\" ] && { echo \"usage: git wtr <branch>\" >&2; exit 2; }; r=$(basename \"$(git rev-parse --show-toplevel)\"); d=$(printf \"%s\" \"$b\" | sed 's,/,_,g'); git worktree remove \"../worktrees/$r/$d\"; git worktree prune >/dev/null 2>&1 || true; }; f"
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
