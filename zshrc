@@ -9,6 +9,10 @@
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# Increase retained shell history beyond macOS /etc/zshrc defaults.
+HISTSIZE=50000
+SAVEHIST=50000
+
 # z - Jump around
 export _Z_DATA="$HOME/z-data"
 source ~/dotfiles/z/z.sh
@@ -91,5 +95,4 @@ export PATH="$HOME/.local/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 
