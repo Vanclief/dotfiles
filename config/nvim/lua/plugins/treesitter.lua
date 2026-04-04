@@ -7,6 +7,8 @@ return {
       "gomod",
       "gowork",
       "gosum",
+      "markdown",
+      "markdown_inline",
       "typescript",
       "ron",
       "rust",
