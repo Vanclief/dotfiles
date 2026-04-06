@@ -62,6 +62,10 @@ export PATH="$GEM_HOME/ruby/${RUBY_API_VERSION}/bin:$PATH"
 # foundry - Utility for solidity development
 export PATH="$PATH:/home/vanclief/.foundry/bin"
 
+# AGC
+export PATH="$HOME/.agent_composer/bin:$PATH"
+
+
 # Change the color of the prompt segment to be compatible with light theme
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -95,4 +99,5 @@ export PATH="$HOME/.local/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 
