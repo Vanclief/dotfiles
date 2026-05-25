@@ -16,3 +16,5 @@ tmp/**/*
 /tags
 
 .coderunner
+
+**/.claude/settings.local.json
