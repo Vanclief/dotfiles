@@ -22,7 +22,9 @@ style = "Italic"
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "#1e2127"
+background = "#1a212e"   # onedark.nvim "deep" bg0 (matches nvim)
+# background = "#1e2127"  # original (darker custom variant)
+# background = "#282c34"  # canonical Atom One Dark background
 foreground = "#abb2bf"
 bright_foreground = "#e6efff"
 
