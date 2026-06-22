@@ -17,9 +17,16 @@ SAVEHIST=50000
 export _Z_DATA="$HOME/z-data"
 source ~/dotfiles/z/z.sh
 
-# tmux - Start terminal multiplexer
+# WezTerm shell integration (OSC 7 cwd so splits/tabs inherit the directory).
+# Only under WezTerm; does nothing in Alacritty/tmux.
+[ -n "$WEZTERM_PANE" ] && [ -f /Applications/WezTerm.app/Contents/Resources/wezterm.sh ] &&
+  source /Applications/WezTerm.app/Contents/Resources/wezterm.sh
+
+# tmux - Start terminal multiplexer.
+# Skipped under WezTerm so the native-multiplexing trial can run there;
+# still auto-starts everywhere else (e.g. Alacritty).
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
-  [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$WEZTERM_PANE" ]; then
   exec tmux
 fi
 
