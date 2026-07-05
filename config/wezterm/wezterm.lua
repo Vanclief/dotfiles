@@ -89,8 +89,23 @@ config.colors = {
 -- bindings only when trialling native multiplexing.
 ------------------------------------------------------------------------------
 config.keys = {
-  -- macOS new window (from alacritty config)
-  { key = 'n', mods = 'CMD', action = act.SpawnWindow },
+  -- Cmd+N: spawn a fully INDEPENDENT WezTerm instance (separate process =
+  -- separate multiplexer), so each macOS window can sit on its own workspace.
+  -- WezTerm has one global active workspace per mux, so a plain SpawnWindow here
+  -- would just make another window that shares this instance's workspace --
+  -- switching in one switches all. Opens on the 'default' workspace (the
+  -- process boundary is what isolates it, not the name; rename with C-s r if
+  -- needed) in the current pane's cwd. See scripts/wezterm-new-instance.sh.
+  { key = 'n', mods = 'CMD', action = wezterm.action_callback(function(_window, pane)
+    local cwd = pane:get_current_working_dir()
+    local dir = cwd and cwd.file_path or (os.getenv 'HOME')
+    -- open returns immediately (hands off to LaunchServices), so this doesn't
+    -- block the GUI thread despite run_child_process being synchronous.
+    wezterm.run_child_process {
+      (os.getenv 'HOME') .. '/dotfiles/scripts/wezterm-new-instance.sh',
+      'default', dir,
+    }
+  end) },
 }
 
 if TRIAL then
