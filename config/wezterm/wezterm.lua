@@ -283,7 +283,30 @@ local right_pills = flatten(
   SPACE
 )
 
--- Tab label "<index> <folder> <zoomed>" -- same name whether active or
+-- Tab text: the manual name set via C-s , (tab.tab_title) when present,
+-- otherwise the active pane's cwd basename. tabline's built-in 'cwd' component
+-- only ever reads the directory and ignores tab_title, which is why a renamed
+-- tab still showed the folder. Truncation mirrors cwd.lua (max 10 chars); the
+-- manual title is shown in full since the user typed it deliberately.
+local function tab_name(tab)
+  local title = tab.tab_title
+  if title and title ~= '' then
+    return title
+  end
+  local cwd_uri = tab.active_pane and tab.active_pane.current_working_dir
+  if cwd_uri then
+    local folder = cwd_uri.file_path:match '([^/]+)/?$'
+    if folder then
+      if #folder > 10 then
+        folder = folder:sub(1, 9) .. '…'
+      end
+      return folder
+    end
+  end
+  return ''
+end
+
+-- Tab label "<index> <name> <zoomed>" -- same name whether active or
 -- inactive so the text doesn't change on select. Inactive tabs get a trailing
 -- thin chevron so the "> > >" rhythm continues between tabs; active tabs
 -- already end in the filled pennant arrow (so they don't need one).
@@ -295,9 +318,12 @@ local function tab_label(bold)
     fmt[#fmt + 1] = { Attribute = { Intensity = 'Bold' } }
   end
   fmt[#fmt + 1] = 'index'
-  -- left = 0: 'index' already adds a right pad of 1, so this avoids a double
-  -- space between the number and the folder name.
-  fmt[#fmt + 1] = { 'cwd', padding = { left = 0, right = 1 } }
+  -- Function component: renders as raw text with no auto-padding, so append the
+  -- trailing space by hand (matches the old cwd padding.right = 1). 'index'
+  -- already right-pads by 1, so no left pad is needed.
+  fmt[#fmt + 1] = function(tab)
+    return tab_name(tab) .. ' '
+  end
   fmt[#fmt + 1] = { 'zoomed', padding = 0 }
   return fmt
 end
