@@ -17,11 +17,6 @@ SAVEHIST=50000
 export _Z_DATA="$HOME/z-data"
 source ~/dotfiles/z/z.sh
 
-# WezTerm shell integration (OSC 7 cwd so splits/tabs inherit the directory).
-# Only under WezTerm; does nothing in Alacritty/tmux.
-[ -n "$WEZTERM_PANE" ] && [ -f /Applications/WezTerm.app/Contents/Resources/wezterm.sh ] &&
-  source /Applications/WezTerm.app/Contents/Resources/wezterm.sh
-
 # tmux - Start terminal multiplexer, only inside Alacritty.
 # Whitelist Alacritty (ALACRITTY_WINDOW_ID) so Orca/WezTerm/other
 # terminals don't each nest a tmux session per pane.
