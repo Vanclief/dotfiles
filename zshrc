@@ -22,11 +22,11 @@ source ~/dotfiles/z/z.sh
 [ -n "$WEZTERM_PANE" ] && [ -f /Applications/WezTerm.app/Contents/Resources/wezterm.sh ] &&
   source /Applications/WezTerm.app/Contents/Resources/wezterm.sh
 
-# tmux - Start terminal multiplexer.
-# Skipped under WezTerm so the native-multiplexing trial can run there;
-# still auto-starts everywhere else (e.g. Alacritty).
+# tmux - Start terminal multiplexer, only inside Alacritty.
+# Whitelist Alacritty (ALACRITTY_WINDOW_ID) so Orca/WezTerm/other
+# terminals don't each nest a tmux session per pane.
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
-  [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$WEZTERM_PANE" ]; then
+  [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -n "$ALACRITTY_WINDOW_ID" ]; then
   exec tmux
 fi
 
@@ -140,3 +140,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 
+
+# Agent Composer path
+export PATH="$PATH:/Users/vanclief/.agent_composer/bin"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
