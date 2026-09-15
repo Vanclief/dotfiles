@@ -95,6 +95,12 @@ export PATH="$PATH:/home/vanclief/.foundry/bin"
 # AGC
 export PATH="$HOME/.agent_composer/bin:$PATH"
 
+# Claude Code - always run subagents on Opus, even from a Fable session.
+# FORCE makes this win over agent frontmatter and per-call model overrides;
+# forks are the only exception and still inherit the parent model.
+export CLAUDE_CODE_SUBAGENT_MODEL=opus
+export CLAUDE_CODE_SUBAGENT_MODEL_FORCE=1
+
 
 # Change the color of the prompt segment to be compatible with light theme
 prompt_context() {
