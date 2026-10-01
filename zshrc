@@ -138,6 +138,14 @@ if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi
 
 command -v fzf >/dev/null && source <(fzf --zsh)
 
+# Home, End and Delete: zsh binds none of them, so Delete would print "~".
+# Two codes each because terminals send one and tmux the other.
+bindkey '^[[H' beginning-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[[3~' delete-char
+
 # Add ~/.local/bin to PATH for user-installed binaries
 export PATH="$HOME/.local/bin:$PATH"
 

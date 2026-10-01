@@ -13,6 +13,12 @@ alias vim="nvim"
 alias py="python"
 alias xcopy="xclip -sel clip"
 
+# GNU ls and grep only color with --color; macOS colors through CLICOLOR
+if [[ $OSTYPE == linux* ]]; then
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+fi
+
 alias gone="git fetch -p && for branch in \$(git branch -vv | awk '/: gone]/{print \$1}'); do git branch -d \"\$branch\"; done"
 
 alias sdroid="scrcpy"
