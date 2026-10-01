@@ -10,6 +10,8 @@
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Increase retained shell history beyond macOS /etc/zshrc defaults.
+# macOS sets HISTFILE in /etc/zshrc; Arch sets none, so history would not be saved.
+HISTFILE=${HISTFILE:-$HOME/.zsh_history}
 HISTSIZE=50000
 SAVEHIST=50000
 
