@@ -51,8 +51,13 @@ export NVM_DIR="$HOME/.nvm"
 for _c in nvm node npm npx; do
   eval "${_c}() {
     unset -f nvm node npm npx 2>/dev/null
-    [ -s \"/opt/homebrew/opt/nvm/nvm.sh\" ] && \. \"/opt/homebrew/opt/nvm/nvm.sh\"
-    [ -s \"/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm\" ] && \. \"/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm\"
+    if [ -s \"/opt/homebrew/opt/nvm/nvm.sh\" ]; then
+      \. \"/opt/homebrew/opt/nvm/nvm.sh\"
+      [ -s \"/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm\" ] && \. \"/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm\"
+    elif [ -s \"\$NVM_DIR/nvm.sh\" ]; then
+      \. \"\$NVM_DIR/nvm.sh\"
+      [ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion\"
+    fi
     ${_c} \"\$@\"
   }"
 done
@@ -90,7 +95,7 @@ fi
 export PATH="$GEM_HOME/ruby/$(<"$_ruby_api_cache")/bin:$PATH"
 
 # foundry - Utility for solidity development
-export PATH="$PATH:/home/vanclief/.foundry/bin"
+export PATH="$PATH:$HOME/.foundry/bin"
 
 # AGC
 export PATH="$HOME/.agent_composer/bin:$PATH"
@@ -109,19 +114,18 @@ prompt_context() {
   fi
 }
 
-# Load ENV variables from a .env file
-DOTFILES_PATH="$HOME/dotfiles"
-[[ -f "$DOTFILES_PATH/.env" ]] && export $(grep -v '^#' "$DOTFILES_PATH/.env" | xargs -0)
-
 # Add pure prompt
 autoload -U promptinit; promptinit
-prompt pure
+(( ${prompt_themes[(Ie)pure]} )) && prompt pure
 
 zstyle :prompt:pure:git:branch color green
 zstyle :prompt:pure:git:dirty color red
 
-# Add auto-suggestions
-source ${ZSH_CUSTOM:-~/.zsh}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Add auto-suggestions (a manual clone on macOS, the zsh-autosuggestions package on Arch)
+for _f in ${ZSH_CUSTOM:-~/.zsh}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh; do
+  [[ -f $_f ]] && source $_f && break
+done
+unset _f
 
 # Git completion setup
 fpath=(~/.zsh $fpath)
@@ -130,19 +134,18 @@ fpath=(~/.zsh $fpath)
 autoload -Uz compinit
 if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi
 
-source <(fzf --zsh)
+command -v fzf >/dev/null && source <(fzf --zsh)
 
 # Add ~/.local/bin to PATH for user-installed binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+# Machine-specific settings and secrets, kept outside the repo
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
-
-
-# Agent Composer path
-export PATH="$PATH:/Users/vanclief/.agent_composer/bin"
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

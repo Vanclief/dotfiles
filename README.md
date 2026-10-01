@@ -19,7 +19,7 @@ brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 
 # Arch Linux
-yay -S rcm tmux neovim pure-prompt
+yay -S rcm tmux neovim zsh-pure-prompt zsh-autosuggestions fzf xclip
 ```
 
 ### 3. Configure SSH
@@ -68,3 +68,17 @@ rcup
 ```bash
 curl -o ~/.zsh/git-completion.zsh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 ```
+
+### 9. Add machine-specific settings and secrets
+
+Anything that belongs to one machine (API keys, PATH entries for tools only it has) goes in `~/.zshrc.local`, outside the repo. `zshrc` sources it near the end.
+
+```bash
+touch ~/.zshrc.local && chmod 600 ~/.zshrc.local
+```
+
+```zsh
+export OPENAI_API_KEY=...
+```
+
+Git settings for one machine go in `~/.gitconfig.local`, which `gitconfig` includes.
