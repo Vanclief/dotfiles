@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Point Claude Code's statusline at ~/.claude/statusline.sh (linked by rcup).
+# settings.json is merged, not linked: Claude Code and Orca both write to it.
+set -euo pipefail
+
+settings="$HOME/.claude/settings.json"
+
+if ! command -v jq >/dev/null 2>&1; then
+	echo "post-up: jq not found, skipping Claude statusline setup" >&2
+	exit 0
+fi
+
+mkdir -p "$(dirname "$settings")"
+[ -s "$settings" ] || echo '{}' >"$settings"
+
+tmp="$(mktemp)"
+jq '.statusLine = {"type": "command", "command": "bash ~/.claude/statusline.sh"}' "$settings" >"$tmp"
+mv "$tmp" "$settings"
