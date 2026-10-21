@@ -96,8 +96,6 @@ if [[ ! -f "$_ruby_api_cache" || "$(command -v ruby)" -nt "$_ruby_api_cache" ]];
 fi
 export PATH="$GEM_HOME/ruby/$(<"$_ruby_api_cache")/bin:$PATH"
 
-# foundry - Utility for solidity development
-export PATH="$PATH:$HOME/.foundry/bin"
 
 # AGC
 export PATH="$HOME/.agent_composer/bin:$PATH"
@@ -157,5 +155,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
-
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
