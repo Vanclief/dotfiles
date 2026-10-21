@@ -82,3 +82,11 @@ export OPENAI_API_KEY=...
 ```
 
 Git settings for one machine go in `~/.gitconfig.local`, which `gitconfig` includes.
+
+### 10. Apply macOS settings (macOS only)
+
+Trackpad, keyboard (Caps Lock to Right Control on the Kinesis Advantage2), Dock and Finder. Idempotent, so rerun it whenever settings drift. The modifier mapping takes effect when the keyboard reconnects or at next login.
+
+```bash
+~/dotfiles/macos
+```
