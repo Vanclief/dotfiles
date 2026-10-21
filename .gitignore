@@ -1,1 +1,12 @@
+# Secrets and machine-local config live outside the repo (~/.zshrc.local etc.).
 .env
+*.local
+*.pem
+*.key
+id_*
+
+# Tool state and noise.
+.DS_Store
+.claude/
+.opencode/
+*.log
