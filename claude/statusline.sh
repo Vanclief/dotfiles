@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Claude Code statusline.
-# Shape: "<dir> (<branch>) | <model> <effort> | <remaining>% context | <weekly>% weekly"
+# Shape: "<dir> (<branch>) | <model> <effort> | <remaining>% context | <weekly>% weekly | <account>"
 # Any segment whose backing field isn't available is dropped (no dangling " | ").
 set -euo pipefail
 
@@ -63,6 +63,30 @@ print("weekly=%s" % esc(seven_day.get("used_percentage")))
   fi
 fi
 
+# --- account -------------------------------------------------------------
+# The payload has no account field. Claude Code keeps the logged-in account in
+# .claude.json: at $HOME when CLAUDE_CONFIG_DIR is unset, otherwise inside it.
+if [ -n "${CLAUDE_CONFIG_DIR:-}" ]; then
+  account_file="${CLAUDE_CONFIG_DIR}/.claude.json"
+else
+  account_file="${HOME}/.claude.json"
+fi
+account=""
+if [ -r "$account_file" ]; then
+  if command -v jq >/dev/null 2>&1; then
+    account="$(jq -r '.oauthAccount.emailAddress // empty' "$account_file" 2>/dev/null || true)"
+  else
+    account="$(python3 -c '
+import json, sys
+try:
+    data = json.load(open(sys.argv[1]))
+except Exception:
+    data = {}
+print((data.get("oauthAccount") or {}).get("emailAddress") or "")
+' "$account_file" 2>/dev/null || true)"
+  fi
+fi
+
 # --- assemble segments ---------------------------------------------------
 
 if [ -n "${branch:-}" ]; then
@@ -87,8 +111,10 @@ if [ -n "${weekly:-}" ] && [ "${weekly}" != "null" ]; then
   seg4="$(printf '%.0f' "${weekly}")% weekly"
 fi
 
+seg5="${account:-}"
+
 out=""
-for seg in "$seg1" "$seg2" "$seg3" "$seg4"; do
+for seg in "$seg1" "$seg2" "$seg3" "$seg4" "$seg5"; do
   [ -z "$seg" ] && continue
   if [ -z "$out" ]; then
     out="$seg"
