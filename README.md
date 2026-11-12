@@ -75,9 +75,12 @@ TPM installs tmux-resurrect and tmux-continuum, which save tmux sessions every 1
 
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source ~/.tmux.conf # loads TPM, which the install script needs
 ~/.tmux/plugins/tpm/bin/install_plugins
-tmux source ~/.tmux.conf
+tmux source ~/.tmux.conf # loads the installed plugins
 ```
+
+Run these inside tmux.
 
 ### 10. Add machine-specific settings and secrets
 
