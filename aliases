@@ -23,6 +23,10 @@ alias gone="git fetch -p && for branch in \$(git branch -vv | awk '/: gone]/{pri
 
 alias sdroid="scrcpy"
 
+# Claude Code - the model aliases resolve to the latest Fable and Opus
+alias fable='claude --model fable --effort high'
+alias opus='claude --model opus --effort high'
+
 
 # Docker
 alias dockerlist='docker ps'
