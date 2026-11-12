@@ -69,7 +69,20 @@ rcup
 curl -o ~/.zsh/git-completion.zsh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 ```
 
-### 9. Add machine-specific settings and secrets
+### 9. Install tmux plugins
+
+TPM installs tmux-resurrect and tmux-continuum, which save tmux sessions every 15 minutes and restore them when tmux starts after a reboot. `PREFIX S` saves and `PREFIX R` restores by hand.
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source ~/.tmux.conf # loads TPM, which the install script needs
+~/.tmux/plugins/tpm/bin/install_plugins
+tmux source ~/.tmux.conf # loads the installed plugins
+```
+
+Run these inside tmux.
+
+### 10. Add machine-specific settings and secrets
 
 Anything that belongs to one machine (API keys, PATH entries for tools only it has) goes in `~/.zshrc.local`, outside the repo. `zshrc` sources it near the end.
 
@@ -83,7 +96,7 @@ export OPENAI_API_KEY=...
 
 Git settings for one machine go in `~/.gitconfig.local`, which `gitconfig` includes.
 
-### 10. Apply macOS settings (macOS only)
+### 11. Apply macOS settings (macOS only)
 
 Trackpad, keyboard (Caps Lock to Right Control on the Kinesis Advantage2), Dock and Finder. Idempotent, so rerun it whenever settings drift. The modifier mapping takes effect when the keyboard reconnects or at next login.
 
