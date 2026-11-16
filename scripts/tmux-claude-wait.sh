@@ -7,7 +7,7 @@
 #   off  UserPromptSubmit, SessionEnd: clear the flag
 #
 # tmux.conf renders @claude_wait in window-status-format (unread: orange pill,
-# seen: white text) and turns unread into seen when the window is looked at.
+# seen: grey text) and turns unread into seen when the window is looked at.
 # Does nothing outside tmux, so headless and non-tmux sessions stay silent.
 [ -n "$TMUX_PANE" ] || exit 0
 
